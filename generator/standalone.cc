@@ -16,7 +16,7 @@
 #include "absl/strings/str_split.h"
 #include "generator/gapic_generator.h"
 #include <google/protobuf/compiler/command_line_interface.h>
-#include <google/protobuf/stubs/io_win32.h>
+// #include <google/protobuf/stubs/io_win32.h>
 #include <fstream>
 
 namespace google {

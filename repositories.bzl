@@ -18,43 +18,36 @@ def com_google_gapic_generator_cpp_repositories():
     _maybe(
         http_archive,
         name = "absl",
-        strip_prefix = "abseil-cpp-20181200",
-        urls = ["https://github.com/abseil/abseil-cpp/archive/20181200.tar.gz"],
+        strip_prefix = "abseil-cpp-20200225.2",
+        urls = ["https://github.com/abseil/abseil-cpp/archive/20200225.2.tar.gz"],
     )
 
     _maybe(
         http_archive,
         name = "com_google_protobuf",
-        strip_prefix = "protobuf-3.7.1",
-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.7.1.tar.gz"],
+        strip_prefix = "protobuf-3.11.3",
+        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.11.3.tar.gz"],
+        sha256 = "cf754718b0aa945b00550ed7962ddc167167bd922b842199eeb6505e6f344852",
     )
 
     _maybe(
         http_archive,
         name = "bazel_skylib",
-        strip_prefix = "bazel-skylib-2169ae1c374aab4a09aa90e65efe1a3aad4e279b",
-        urls = ["https://github.com/bazelbuild/bazel-skylib/archive/2169ae1c374aab4a09aa90e65efe1a3aad4e279b.tar.gz"],
+        strip_prefix = "bazel-skylib-1.0.2",
+        urls = ["https://github.com/bazelbuild/bazel-skylib/archive/1.0.2.tar.gz"],
+        sha256 = "e5d90f0ec952883d56747b7604e2a15ee36e288bb556c3d0ed33e818a4d971f2",
     )
 
     _maybe(
         http_archive,
-        name = "net_zlib",
-        build_file = "@com_google_protobuf//:third_party/zlib.BUILD",
-        strip_prefix = "zlib-1.2.11",
-        urls = ["https://zlib.net/zlib-1.2.11.tar.gz"],
-    )
-
-    _maybe(
-        native.bind,
         name = "zlib",
-        actual = "@net_zlib//:zlib",
-    )
-
-    _maybe(
-        http_archive,
-        name = "com_google_googleapis",
-        strip_prefix = "googleapis-c69355435cf6ae824a21f2bba31c69697733d3d2",
-        urls = ["https://github.com/googleapis/googleapis/archive/c69355435cf6ae824a21f2bba31c69697733d3d2.tar.gz"],
+        build_file = "@com_google_protobuf//:third_party/zlib.BUILD",
+        sha256 = "c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1",
+        strip_prefix = "zlib-1.2.11",
+        urls = [
+            "https://mirror.bazel.build/zlib.net/zlib-1.2.11.tar.gz",
+            "https://zlib.net/zlib-1.2.11.tar.gz",
+        ],
     )
 
     _maybe(

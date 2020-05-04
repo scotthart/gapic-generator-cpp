@@ -44,12 +44,16 @@ load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
 
 grpc_deps()
 
+load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
+
+grpc_extra_deps()
+
 #
 # gapic-generator (contains common definitions for gapic rules, see gapic.bzl
 # file in com_google_api_codegen)
 #
 http_archive(
     name = "com_google_api_codegen",
-    strip_prefix = "gapic-generator-025ebdbb3d14609be938900a538418858b0ecfb7",
-    urls = ["https://github.com/googleapis/gapic-generator/archive/025ebdbb3d14609be938900a538418858b0ecfb7.zip"],
+    strip_prefix = "gapic-generator-cded7f07406c0e5fb3bbb2c42fcee0024cc8f9d9",
+    urls = ["https://github.com/googleapis/gapic-generator/archive/cded7f07406c0e5fb3bbb2c42fcee0024cc8f9d9.tar.gz"],
 )
